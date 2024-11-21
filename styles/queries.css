@@ -1,0 +1,324 @@
+/* rem and em donot depend of html font size in media queries. Instead 1rem = 1em = 16px
+Always use em unit in media queries as rem has some bugs in some browser while used in media queries */
+
+/* Media query which will fire under 1350px */
+
+/* 1350/16 = 84 */
+@media (max-width: 84em) {
+  .hero-div {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Landscape tablets in landscape */
+@media (max-width: 75em) {
+  html {
+    /* Updating the base font so that the rem unit will effect in the entire page */
+    font-size: 56.2%;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.6rem;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .hero-div {
+    gap: 4.8rem;
+  }
+
+  .navigation-link-list {
+    gap: 3.2rem;
+  }
+}
+
+/* Landscape tablets */
+
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero-div {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-image {
+    width: 60%;
+  }
+
+  .hero-text,
+  .hero-image-section {
+    text-align: center;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .featured-icon {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .card-text {
+    padding: 1.2rem 3.2rem;
+  }
+
+  .testimonial-layout {
+    grid-template-columns: 1fr;
+    gap: 6.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
+  }
+
+  /* Mobile navigation */
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-navigation {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Make background blur */
+    /* For safari support */
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* When hidden move the section to the right hand side outside of the page */
+    transform: translateX(100%);
+    transition: all 0.5s ease-out;
+
+    /* Makde opacity zero */
+    opacity: 0;
+    /* Reset keyboard taps as well */
+    pointer-events: none;
+    /* Hide visbility from screen readers */
+    visibility: hidden;
+  }
+
+  .navigation-link-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .nav-link:link,
+  .nav-link:visited {
+    font-size: 6rem;
+  }
+
+  .nav-open .main-navigation {
+    opacity: 1;
+    /* Get back the navigation */
+    transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .nav-open ion-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open ion-icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+@media (max-width: 44em) {
+  .featured-in-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4.8rem;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+  }
+
+  .address-col,
+  .logo-col {
+    grid-column: span 3;
+  }
+
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .list-of-diets {
+    grid-column: span 2;
+    justify-self: center;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+}
+
+/* Setting for mobile devices (Phones) */
+@media (max-width: 34em) {
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+
+  .list-of-diets {
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  .hero-div {
+    padding: 0 3.2rem;
+  }
+
+  .hero-section {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .btn:link,
+  .btn:visited {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .hero-image {
+    width: 80%;
+  }
+
+  .step-img-box:nth-child(2) {
+    grid-row: 1 / 2;
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5 / 6;
+  }
+
+  .step-img-box {
+    transform: translateY(24px);
+  }
+
+  .testimonal {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+}
+
+/* ---------------------------------- */
+/* CSS Hack for flexbox fix */
+.no-flexbox-gap .navigation-link-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
